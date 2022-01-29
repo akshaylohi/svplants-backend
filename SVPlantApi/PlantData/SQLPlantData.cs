@@ -51,6 +51,10 @@ namespace SVPlantApi.PlantData
         public bool StopWateringPlant(int PlantId)
         {
             Plant plantObj = GetPlant(PlantId);
+            if(plantObj.Status == "ok")
+            {
+                return false;
+            }
             plantObj.Status = "ok";
             plantObj.LastWateredTime = (DateTime.Now);
             _plantContext.Plants.Update(plantObj);
