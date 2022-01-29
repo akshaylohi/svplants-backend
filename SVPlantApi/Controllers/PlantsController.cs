@@ -89,9 +89,6 @@ namespace SVPlantApi.Controllers
             var plant = _plantData.GetPlant(plantId);
             if (plant != null)
             {
-                System.Diagnostics.Debug.WriteLine(plant.Name);
-                System.Diagnostics.Debug.WriteLine(plant.Status);
-                System.Diagnostics.Debug.WriteLine(plant.LastWateredTime);
                 if (_plantData.WaterPlant(plantId))
                 {
                     return Ok(_plantData.GetPlant(plantId));
