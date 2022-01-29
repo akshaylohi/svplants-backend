@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SVPlantApi.PlantData
 {
+    // Class to mock the data fetch without DB
     public class MockPlantData : IPlantData
     {
         private List<Plant> plants = new List<Plant>() {
